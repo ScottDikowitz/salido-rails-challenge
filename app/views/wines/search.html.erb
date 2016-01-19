@@ -1,6 +1,20 @@
 Search wines!
-<form action='#' method="post">
+<form action="<%= wines_results_url %>" method="post">
 <%= auth_token %>
-
+Name
+<input type="text" name="wine[name]">
+</br>
+Year
+<input type="number" min='5' name="wine[year]">
+</br>
+Min Price
+<input type="number" min="1" max="999" name="wine[min]">
+</br>
+Max Price
+<input type="number" min="1" max="999" name="wine[max]">
+</br>
+<select>
+  <option value='wine1'>wine1</option>
+</select>
 <input type="submit" value="Search!">
 </form>

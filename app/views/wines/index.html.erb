@@ -1,1 +1,6 @@
-hello
+<% @wines.each do |wine| %>
+<a href="<%= wine_url(wine)%>"><%= wine.name %></a>
+</br>
+<% end %>
+</hr>
+<a href="<%= wines_search_url %>">Search!</a>
