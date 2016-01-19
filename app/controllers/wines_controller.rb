@@ -9,6 +9,18 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
   end
 
+  def edit
+    @edit = "hello world"
+    @wine = Wine.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @wine = Wine.find(params[:id])
+    @wine.update(wine_params)
+    render json: @wine
+  end
+
   def search
     @test = "hello"
     render "wines/search"
@@ -22,6 +34,6 @@ class WinesController < ApplicationController
   end
 
   def wine_params
-    params.require(:wine).permit(:name, :year, :min, :max)
+    params.require(:wine).permit(:name, :price_min, :price_max)
   end
 end

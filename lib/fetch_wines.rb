@@ -1,8 +1,8 @@
 class FetchWines
   def initialize(query)
     @wines = []
-    @min = query["min"] || 1
-    @max = query["max"] || 99999
+    @min = query["price_min"] || 1
+    @max = query["price_max"] || 99999
     @search = query['name'] || ""
     @call = "/api/beta2/service.svc/json/"
     generate_objects

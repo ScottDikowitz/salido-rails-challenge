@@ -1,0 +1,24 @@
+Search wines!
+<form action="<%= wine_url(@wine) %>" method="post">
+<%= auth_token %>
+<input type="hidden" name="_method" value="patch">
+Name
+<input type="text" name="wine[name]" value="<%= @wine.name %>">
+</br>
+</br>
+Min Price
+<input type="number" min="1" max="999" name="wine[price_min]" value="<%= @wine.price_min %>">
+</br>
+Max Price
+<input type="number" min="1" max="999" name="wine[price_max]" value="<%= @wine.price_max %>">
+</br>
+Retail Price
+<input type="number" min="1" max="999" name="wine[price_retail]" value="<%= @wine.price_retail %>">
+</br>
+<select>
+  <option value='wine1'>wine1</option>
+</select>
+<input type="submit" value="Update!">
+</form>
+</hr>
+<a href="<%= wines_url %>">Index</a>
