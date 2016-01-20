@@ -1,4 +1,7 @@
-Search wines!
+<a href="http://www.wine.com/" title="Wine.com the destination for Wine and Wine Gifts">
+  <img src="http://cache.wine.com/images/logos/80x80_winecom_logo.png" alt="Wine.com the destination for Wine and Wine Gifts" /></a>
+  <br/>
+  Search wines!
 <form action="<%= wine_url(@wine) %>" method="post">
 <%= auth_token %>
 <input type="hidden" name="_method" value="patch">
@@ -15,10 +18,18 @@ Max Price
 Retail Price
 <input type="number" min="1" max="999" name="wine[price_retail]" value="<%= @wine.price_retail %>">
 </br>
+URL
+<input type="text" name="wine[url]" value="<%= @wine.url %>">
+</br>
 <select>
   <option value='wine1'>wine1</option>
 </select>
 <input type="submit" value="Update!">
 </form>
-</hr>
+<form action="<%= wine_url(@wine) %>" method="post">
+  <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+<hr/>
 <a href="<%= wines_url %>">Index</a>

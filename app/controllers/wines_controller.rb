@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  load 'fetch_wines.rb'
+  require 'fetch_wines.rb'
   def index
     @wines = Wine.all
     render :index
@@ -17,13 +17,23 @@ class WinesController < ApplicationController
 
   def update
     @wine = Wine.find(params[:id])
-    @wine.update(wine_params)
-    render json: @wine
+    unless @wine.update(wine_params)
+      flash.now[:errors] = @wine.errors.full_messages
+      @wine = Wine.find(params[:id])
+    end
+
+
+    render :show
   end
 
   def search
-    @test = "hello"
     render "wines/search"
+  end
+
+  def destroy
+    @wine = Wine.find(params[:id])
+    @wine.destroy
+    redirect_to wines_url
   end
 
   def fetch
@@ -34,6 +44,6 @@ class WinesController < ApplicationController
   end
 
   def wine_params
-    params.require(:wine).permit(:name, :price_min, :price_max)
+    params.require(:wine).permit(:name, :price_min, :price_max, :type)
   end
 end
