@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114221337) do
+ActiveRecord::Schema.define(version: 20160120214805) do
 
   create_table "wines", force: :cascade do |t|
     t.string   "name",         null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160114221337) do
     t.integer  "price_retail"
     t.integer  "api_id",       null: false
     t.integer  "year"
-    t.string   "type"
+    t.string   "kind"
     t.string   "url"
     t.string   "description"
     t.datetime "created_at",   null: false

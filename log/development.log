@@ -13897,3 +13897,2142 @@ Processing by WinesController#fetch as HTML
   [1m[36m (124.1ms)[0m  [1mcommit transaction[0m
   Rendered wines/results.html.erb within layouts/application (3.3ms)
 Completed 200 OK in 3464ms (Views: 290.3ms | ActiveRecord: 1348.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+[0m
+  [1m[36m (113.9ms)[0m  [1mCREATE TABLE "wines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "price_min" integer, "price_max" integer, "price_retail" integer, "api_id" integer NOT NULL, "year" integer, "type" varchar, "url" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (98.4ms)[0m  [1mCREATE UNIQUE INDEX "index_wines_on_api_id_and_name" ON "wines" ("api_id", "name")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+
+  [1m[36m (99.1ms)[0m  [1mCREATE  INDEX "index_wines_on_price_min_and_price_max_and_price_retail" ON "wines" ("price_min", "price_max", "price_retail")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+[0m
+  [1m[35m (119.5ms)[0m  CREATE  INDEX "index_wines_on_year_and_url_and_description" ON "wines" ("year", "url", "description")
+  [1m[36m (97.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (90.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (76.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160114221337')
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-19 22:08:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WinesController#index as HTML
+  [1m[35mWine Load (0.6ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered wines/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 346ms (Views: 324.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-19 22:13:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WinesController#index as HTML
+  [1m[35mWine Load (0.6ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered wines/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 326ms (Views: 307.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-20 16:21:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WinesController#index as HTML
+  [1m[35mWine Load (0.6ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered wines/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 732ms (Views: 695.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 16:21:24 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 16:21:24 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 16:21:24 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 16:21:24 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 16:21:24 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 16:21:24 -0500
+
+
+Started GET "/wines/9" for 127.0.0.1 at 2016-01-20 16:21:27 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mWine Load (0.4ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered wines/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 96ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wines/9" for 127.0.0.1 at 2016-01-20 16:23:35 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered wines/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wines/9" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered wines/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:20 -0500
+
+
+Started GET "/wines/9" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mWine Load (1.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered wines/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 38.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 16:24:34 -0500
+
+
+Started GET "/wines/9" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered wines/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 16:28:33 -0500
+
+
+Started GET "/wines/9/edit" for 127.0.0.1 at 2016-01-20 16:28:40 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered wines/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 71ms (Views: 68.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/wines/9" for 127.0.0.1 at 2016-01-20 16:29:44 -0500
+Processing by WinesController#update as HTML
+  Parameters: {"authenticity_token"=>"h6ZVdjxuiKTn6U6SEfLBz8O4S0eTie20lRnR390ogrcDFfBMRs3DNtmfyPRJYAqVr6HyH3DUcNkME3114fWUNA==", "wine"=>{"name"=>"Hello Kitty Devil 2007", "price_min"=>"39", "price_max"=>"39", "price_retail"=>"39", "url"=>"http://www.wine.com/v6/Hello-Kitty-Devil-2007/wine/115160/Detail.aspx"}, "id"=>"9"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 9]]
+Unpermitted parameters: price_retail, url
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mWine Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE ("wines"."name" = 'Hello Kitty Devil 2007' AND "wines"."id" != 9) LIMIT 1[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE ("wines"."api_id" = 115160 AND "wines"."id" != 9) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered wines/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wines/9/edit" for 127.0.0.1 at 2016-01-20 16:29:49 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered wines/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/wines/9" for 127.0.0.1 at 2016-01-20 16:29:51 -0500
+Processing by WinesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Wb5sSlhEdKdeQcnL9sMllw40+hGjlsRYL8KbQ9fvUmvdDclwIuc/NWA3T62uUe7NYi1DSUDLWTW2yDfp6zJE6A==", "id"=>"9"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "wines" WHERE "wines"."id" = ?[0m  [["id", 9]]
+  [1m[35m (154.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/wines
+Completed 302 Found in 166ms (ActiveRecord: 155.4ms)
+
+
+Started GET "/wines" for 127.0.0.1 at 2016-01-20 16:29:51 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (1.6ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered wines/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/wines/9/edit" for 127.0.0.1 at 2016-01-20 16:42:06 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 9]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound - Couldn't find Wine with 'id'=9:
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:324:in `raise_record_not_found_exception!'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:444:in `find_one'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:423:in `find_with_ids'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:71:in `find'
+  activerecord (4.2.4) lib/active_record/querying.rb:3:in `find'
+  activerecord (4.2.4) lib/active_record/core.rb:131:in `find'
+  app/controllers/wines_controller.rb:14:in `edit'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/f7daa749890dbb2d/variables" for 127.0.0.1 at 2016-01-20 16:42:07 -0500
+
+
+Started PATCH "/wines/9" for 127.0.0.1 at 2016-01-20 16:42:12 -0500
+Processing by WinesController#update as HTML
+  Parameters: {"authenticity_token"=>"h6ZVdjxuiKTn6U6SEfLBz8O4S0eTie20lRnR390ogrcDFfBMRs3DNtmfyPRJYAqVr6HyH3DUcNkME3114fWUNA==", "wine"=>{"name"=>"Hello Kitty Devil 2007", "price_min"=>"39", "price_max"=>"39", "price_retail"=>"39", "url"=>"http://www.wine.com/v6/Hello-Kitty-Devil-2007/wine/115160/Detail.aspx"}, "id"=>"9"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 9]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound - Couldn't find Wine with 'id'=9:
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:324:in `raise_record_not_found_exception!'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:444:in `find_one'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:423:in `find_with_ids'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:71:in `find'
+  activerecord (4.2.4) lib/active_record/querying.rb:3:in `find'
+  activerecord (4.2.4) lib/active_record/core.rb:131:in `find'
+  app/controllers/wines_controller.rb:19:in `update'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/5b5776b8d3a7d018/variables" for 127.0.0.1 at 2016-01-20 16:42:13 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-20 16:42:15 -0500
+Processing by WinesController#index as HTML
+  [1m[35mWine Load (0.7ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered wines/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wines/13" for 127.0.0.1 at 2016-01-20 16:42:17 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mWine Load (0.3ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered wines/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wines/13/edit" for 127.0.0.1 at 2016-01-20 16:42:19 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 13]]
+  Rendered wines/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/wines/13" for 127.0.0.1 at 2016-01-20 16:42:20 -0500
+Processing by WinesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MNkp7nzaRIHQW5n5ZSZdsWk6McI0aM3Zc8EsJern1fu0aozUBnkPE+4tH589tJbrBSOImtc1ULTqy4CP1jrDeA==", "id"=>"13"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "wines" WHERE "wines"."id" = ?[0m  [["id", 13]]
+  [1m[35m (130.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/wines
+Completed 302 Found in 138ms (ActiveRecord: 132.2ms)
+
+
+Started GET "/wines" for 127.0.0.1 at 2016-01-20 16:42:20 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (0.6ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered wines/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wines/21" for 127.0.0.1 at 2016-01-20 16:42:22 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mWine Load (1.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered wines/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/wines/21/edit" for 127.0.0.1 at 2016-01-20 16:42:57 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered wines/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/wines/21/edit" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered wines/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 16:43:55 -0500
+
+
+Started PATCH "/wines/21" for 127.0.0.1 at 2016-01-20 16:43:59 -0500
+Processing by WinesController#update as HTML
+  Parameters: {"authenticity_token"=>"AhWLwsf1S0hC8pwyBEoLBX15wufqpkwK6aVyqRN8KPCGpi74vVYA2nyEGlRc2MBfEWB7vwn70Wdwr94DL6E+cw==", "wine"=>{"name"=>"Pillar Box Padthaway Red 2004", "price_min"=>"9", "price_max"=>"10", "price_retail"=>"9", "url"=>"http://www.wine.com/v6/Pillar-Box-Padthaway-Red-2004/wine/85695/Detail.aspx", "type"=>"Wineset"}, "id"=>"21"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 21]]
+Unpermitted parameters: price_retail, url
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mWine Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE ("wines"."name" = 'Pillar Box Padthaway Red 2004' AND "wines"."id" != 21) LIMIT 1[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE ("wines"."api_id" = 85695 AND "wines"."id" != 21) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "wines" SET "type" = ?, "updated_at" = ? WHERE "wines"."id" = ?[0m  [["type", "Wineset"], ["updated_at", "2016-01-20 21:43:59.475802"], ["id", 21]]
+  [1m[35m (85.8ms)[0m  commit transaction
+  Rendered wines/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 121ms (Views: 19.1ms | ActiveRecord: 87.1ms)
+
+
+Started GET "/wines/21/edit" for 127.0.0.1 at 2016-01-20 16:44:07 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 21]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::SubclassNotFound - The single-table inheritance mechanism failed to locate the subclass: 'Wineset'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Wine.inheritance_column to use another column for that information.:
+  activerecord (4.2.4) lib/active_record/inheritance.rb:186:in `rescue in find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:180:in `find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:169:in `discriminate_class_for_record'
+  activerecord (4.2.4) lib/active_record/persistence.rb:67:in `instantiate'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block (2 levels) in find_by_sql'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `block in each'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `each'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block in find_by_sql'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/querying.rb:49:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:442:in `find_one'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:423:in `find_with_ids'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:71:in `find'
+  activerecord (4.2.4) lib/active_record/querying.rb:3:in `find'
+  activerecord (4.2.4) lib/active_record/core.rb:131:in `find'
+  app/controllers/wines_controller.rb:14:in `edit'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/cd5d44f7810b4e6a/variables" for 127.0.0.1 at 2016-01-20 16:44:07 -0500
+
+
+Started GET "/wines/21/edit" for 127.0.0.1 at 2016-01-20 16:45:11 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 21]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::SubclassNotFound - The single-table inheritance mechanism failed to locate the subclass: 'Wineset'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Wine.inheritance_column to use another column for that information.:
+  activerecord (4.2.4) lib/active_record/inheritance.rb:186:in `rescue in find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:180:in `find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:169:in `discriminate_class_for_record'
+  activerecord (4.2.4) lib/active_record/persistence.rb:67:in `instantiate'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block (2 levels) in find_by_sql'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `block in each'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `each'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block in find_by_sql'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/querying.rb:49:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:442:in `find_one'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:423:in `find_with_ids'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:71:in `find'
+  activerecord (4.2.4) lib/active_record/querying.rb:3:in `find'
+  activerecord (4.2.4) lib/active_record/core.rb:131:in `find'
+  app/controllers/wines_controller.rb:14:in `edit'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/6df4a09c5d272a7f/variables" for 127.0.0.1 at 2016-01-20 16:45:11 -0500
+
+
+Started GET "/wines/21/edit" for 127.0.0.1 at 2016-01-20 16:47:01 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mWine Load (0.3ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 21]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::SubclassNotFound - The single-table inheritance mechanism failed to locate the subclass: 'Wineset'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Wine.inheritance_column to use another column for that information.:
+  activerecord (4.2.4) lib/active_record/inheritance.rb:186:in `rescue in find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:180:in `find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:169:in `discriminate_class_for_record'
+  activerecord (4.2.4) lib/active_record/persistence.rb:67:in `instantiate'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block (2 levels) in find_by_sql'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `block in each'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `each'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block in find_by_sql'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/querying.rb:49:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:442:in `find_one'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:423:in `find_with_ids'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:71:in `find'
+  activerecord (4.2.4) lib/active_record/querying.rb:3:in `find'
+  activerecord (4.2.4) lib/active_record/core.rb:131:in `find'
+  app/controllers/wines_controller.rb:14:in `edit'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/30898359c50cd33d/variables" for 127.0.0.1 at 2016-01-20 16:47:01 -0500
+
+
+Started GET "/wines/21/" for 127.0.0.1 at 2016-01-20 16:47:05 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 21]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::SubclassNotFound - The single-table inheritance mechanism failed to locate the subclass: 'Wineset'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Wine.inheritance_column to use another column for that information.:
+  activerecord (4.2.4) lib/active_record/inheritance.rb:186:in `rescue in find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:180:in `find_sti_class'
+  activerecord (4.2.4) lib/active_record/inheritance.rb:169:in `discriminate_class_for_record'
+  activerecord (4.2.4) lib/active_record/persistence.rb:67:in `instantiate'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block (2 levels) in find_by_sql'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `block in each'
+  activerecord (4.2.4) lib/active_record/result.rb:51:in `each'
+  activerecord (4.2.4) lib/active_record/querying.rb:50:in `block in find_by_sql'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/querying.rb:49:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:442:in `find_one'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:423:in `find_with_ids'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:71:in `find'
+  activerecord (4.2.4) lib/active_record/querying.rb:3:in `find'
+  activerecord (4.2.4) lib/active_record/core.rb:131:in `find'
+  app/controllers/wines_controller.rb:9:in `show'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/2aa6f365d4a390c4/variables" for 127.0.0.1 at 2016-01-20 16:47:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeColumnNameTypeToKind (20160120214805)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TEMPORARY TABLE "awines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "price_min" integer, "price_max" integer, "price_retail" integer, "api_id" integer NOT NULL, "year" integer, "kind" varchar, "url" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "tindex_awines_on_api_id_and_name" ON "awines" ("api_id", "name")
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "tindex_awines_on_year_and_url_and_description" ON "awines" ("year", "url", "description")[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_awines_on_price_min_and_price_max_and_price_retail" ON "awines" ("price_min", "price_max", "price_retail")
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "wines"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (12, 'Hello Kitty Angel 2008', 30, 29, 29, 106543, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Angel-2008/wine/106543/Detail.aspx', '', '2016-01-19 04:49:25.635060', '2016-01-19 20:55:31.912146')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (15, 'Angove Family Winemakers Red Belly ', 7, 15, 12, 97675, NULL, 'Wine', 'http://www.wine.com/v6/Angove-Family-Winemakers-Red-Belly-Black-Chardonnay-2006/wine/97675/Detail.aspx', '', '2016-01-19 16:31:39.350597', '2016-01-19 16:33:10.229357')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (16, 'Heliotrope Red Moscato 2012', 9, 9, 9, 138196, NULL, 'Wine', 'http://www.wine.com/v6/Heliotrope-Red-Moscato-2012/wine/138196/Detail.aspx', '', '2016-01-19 16:31:39.450431', '2016-01-19 16:31:39.450431')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (17, 'Hey Mambo Sultry Red 2012', 8, 15, 13, 139543, NULL, 'Wine', 'http://www.wine.com/v6/Hey-Mambo-Sultry-Red-2012/wine/139543/Detail.aspx', '', '2016-01-19 16:31:39.550733', '2016-01-19 16:31:39.550733')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (18, 'Bonny Doon Ca'' del Solo Big House Red 2001', 9, 12, 11, 52588, NULL, 'Wine', 'http://www.wine.com/v6/Bonny-Doon-Ca-del-Solo-Big-House-Red-2001/wine/52588/Detail.aspx', '', '2016-01-19 16:31:39.693142', '2016-01-19 16:31:39.693142')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (19, 'Guelbenzu Red 2007', 7, 14, 13, 98589, NULL, 'Wine', 'http://www.wine.com/v6/Guelbenzu-Red-2007/wine/98589/Detail.aspx', '', '2016-01-19 16:31:39.784097', '2016-01-19 16:31:39.784097')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (20, 'Big House Red Blend 2004', 9, 12, 11, 86585, NULL, 'Wine', 'http://www.wine.com/v6/Big-House-Red-Blend-2004/wine/86585/Detail.aspx', '', '2016-01-19 16:31:39.898447', '2016-01-19 16:31:39.898447')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (21, 'Pillar Box Padthaway Red 2004', 9, 10, 9, 85695, NULL, 'Wineset', 'http://www.wine.com/v6/Pillar-Box-Padthaway-Red-2004/wine/85695/Detail.aspx', '', '2016-01-19 16:31:40.141542', '2016-01-20 21:43:59.475802')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (22, 'Quinta de la Rosa Duoro Red 2005', 8, 8, 20, 97265, NULL, 'Wine', 'http://www.wine.com/v6/Quinta-de-la-Rosa-Duoro-Red-2005/wine/97265/Detail.aspx', '', '2016-01-19 16:31:40.329984', '2016-01-19 16:31:40.329984')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (23, 'Bonny Doon Ca'' del Solo Big House Red 2002', 9, 1305, 11, 60148, NULL, 'Wine', 'http://www.wine.com/v6/Bonny-Doon-Ca-del-Solo-Big-House-Red-2002/wine/60148/Detail.aspx', '', '2016-01-19 16:31:40.446997', '2016-01-19 16:31:40.446997')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (25, 'Kay Brothers Basket Pressed Shiraz 2010', 27, 49, 40, 126340, NULL, 'Wine', 'http://www.wine.com/v6/Kay-Brothers-Basket-Pressed-Shiraz-2010/wine/126340/Detail.aspx', '', '2016-01-19 16:40:06.417632', '2016-01-19 16:40:06.417632')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (26, 'Rockford Shiraz Basket Press 2001', 62, 62, 62, 79465, NULL, 'Wine', 'http://www.wine.com/v6/Rockford-Shiraz-Basket-Press-2001/wine/79465/Detail.aspx', '', '2016-01-19 16:40:06.534127', '2016-01-19 16:40:06.534127')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (27, 'Talomas Basket Press Reserve Syrah 2001', 51, 51, 51, 87548, NULL, 'Wine', 'http://www.wine.com/v6/Talomas-Basket-Press-Reserve-Syrah-2001/wine/87548/Detail.aspx', '', '2016-01-19 16:40:06.632759', '2016-01-19 16:40:06.632759')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (28, 'Highbank Coonawarra Basket Pressed (Cab/Merlot/Cab Franc) 1997', 40, 40, 40, 43138, NULL, 'Wine', 'http://www.wine.com/v6/Highbank-Coonawarra-Basket-Pressed-CabMerlotCab-Franc-1997/wine/43138/Detail.aspx', '', '2016-01-19 16:40:06.732895', '2016-01-19 16:40:06.732895')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (29, 'Saint Cosme Little James Basket Press 2003', 11, 11, 11, 80689, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press-2003/wine/80689/Detail.aspx', '', '2016-01-19 16:40:06.869218', '2016-01-19 16:40:06.869218')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (31, 'Saint Cosme Little James Basket Press', 12, 17, 12, 83132, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press/wine/83132/Detail.aspx', '', '2016-01-19 16:40:07.378402', '2016-01-19 16:40:07.378402')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (32, 'Saint Cosme Little James Basket Press Blanc 2013', 13, 13, 13, 132238, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press-Blanc-2013/wine/132238/Detail.aspx', '', '2016-01-19 16:40:07.490055', '2016-01-19 16:40:07.490055')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (33, 'Saint Cosme Little James Basket Press Blanc 2014', 13, 14, 13, 148110, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press-Blanc-2014/wine/148110/Detail.aspx', '', '2016-01-19 16:40:07.630607', '2016-01-19 16:40:07.630607')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (34, 'Ch. Reynella Basket Pressed Shiraz 2001', 27, 27, 27, 80437, NULL, 'Wine', 'http://www.wine.com/v6/Ch-Reynella-Basket-Pressed-Shiraz-2001/wine/80437/Detail.aspx', '', '2016-01-19 16:40:07.733976', '2016-01-19 16:40:07.733976')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (35, 'Hello Kitty Chardonnay 2010', 15, 15, 15, 118416, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx', '', '2016-01-19 20:59:27.230614', '2016-01-19 20:59:27.230614')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (36, 'Hello Kitty Devil 2006', 39, 39, 39, 106545, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Devil-2006/wine/106545/Detail.aspx', '', '2016-01-19 20:59:27.590411', '2016-01-19 20:59:27.590411')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (37, 'Hello Kitty Sparkling Rose', 23, 36, 23, 106544, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Sparkling-Rose/wine/106544/Detail.aspx', '', '2016-01-19 20:59:27.765306', '2016-01-19 20:59:27.765306')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (38, 'Hello Kitty Sweet Pink Demi Sec (375ML half-bottle)', 12, 16, 19, 106546, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Sweet-Pink-Demi-Sec-375ML-half-bottle/wine/106546/Detail.aspx', '', '2016-01-19 20:59:27.928594', '2016-01-19 20:59:27.928594')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (39, 'Merry Edwards Angel Wing Pinot Noir 2006', 129, 129, 129, 150778, NULL, 'Wine', 'http://www.wine.com/v6/Merry-Edwards-Angel-Wing-Pinot-Noir-2006/wine/150778/Detail.aspx', '', '2016-01-19 21:18:34.824904', '2016-01-19 21:18:34.824904')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (40, 'Kanbara Wings of Fortune Sake (720ML)', 35, 39, 35, 92024, NULL, 'Wine', 'http://www.wine.com/v6/Kanbara-Wings-of-Fortune-Sake-720ML/wine/92024/Detail.aspx', '', '2016-01-19 21:18:34.968752', '2016-01-19 21:18:34.968752')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (41, 'Angel''s Wings Sauvignon Blanc 2011', 14, 14, 14, 141834, NULL, 'Wine', 'http://www.wine.com/v6/Angels-Wings-Sauvignon-Blanc-2011/wine/141834/Detail.aspx', '', '2016-01-19 21:18:35.123597', '2016-01-19 21:18:35.123597')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (42, 'H. Blin Millesime Brut 2006', 39, 39, 60, 147210, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Millesime-Brut-2006/wine/147210/Detail.aspx', '', '2016-01-19 21:18:58.579926', '2016-01-19 21:18:58.579926')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (43, 'H. Blin Brut', 47, 47, 47, 148272, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Brut/wine/148272/Detail.aspx', '', '2016-01-19 21:18:58.754396', '2016-01-19 21:18:58.754396')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (44, 'H. Blin Rose', 57, 57, 57, 147707, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Rose/wine/147707/Detail.aspx', '', '2016-01-19 21:18:58.888462', '2016-01-19 21:18:58.888462')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (45, 'H. Blin Blanc de Blancs', 55, 55, 55, 148260, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Blanc-de-Blancs/wine/148260/Detail.aspx', '', '2016-01-19 21:18:59.020676', '2016-01-19 21:18:59.020676')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (46, 'Honig Rutherford Sauvignon Blanc 2013', 26, 28, 26, 137314, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Rutherford-Sauvignon-Blanc-2013/wine/137314/Detail.aspx', '', '2016-01-19 21:20:35.266275', '2016-01-19 21:20:35.266275')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (47, 'Honig Cabernet Sauvignon 2011', 38, 44, 45, 123554, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2011/wine/123554/Detail.aspx', '', '2016-01-19 21:20:35.410710', '2016-01-19 21:20:35.410710')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (48, 'Honig Cabernet Sauvignon 2010', 38, 48, 45, 120987, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2010/wine/120987/Detail.aspx', '', '2016-01-19 21:20:35.568825', '2016-01-19 21:20:35.568825')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (49, 'Honig Cabernet Sauvignon 2009', 39, 44, 44, 117430, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2009/wine/117430/Detail.aspx', '', '2016-01-19 21:20:35.725379', '2016-01-19 21:20:35.725379')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (50, 'Honig Cabernet Sauvignon 2007', 35, 35, 40, 108419, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2007/wine/108419/Detail.aspx', '', '2016-01-19 21:20:35.866047', '2016-01-19 21:20:35.866047')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (51, 'Honig Cabernet Sauvignon 1999', 24, 32, 24, 46871, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-1999/wine/46871/Detail.aspx', '', '2016-01-19 21:20:35.997855', '2016-01-19 21:20:35.997855')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (52, 'Honig Bartolucci Vineyard Cabernet Sauvignon 2010', 79, 79, 79, 137317, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Bartolucci-Vineyard-Cabernet-Sauvignon-2010/wine/137317/Detail.aspx', '', '2016-01-19 21:20:36.131360', '2016-01-19 21:20:36.131360')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (53, 'Honig Cabernet Sauvignon 2012', 35, 49, 41, 131659, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2012/wine/131659/Detail.aspx', '', '2016-01-19 21:20:36.284044', '2016-01-19 21:20:36.284044')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (54, 'Honig Bartolucci Vineyard Cabernet Sauvignon 2012', 79, 79, 79, 151153, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Bartolucci-Vineyard-Cabernet-Sauvignon-2012/wine/151153/Detail.aspx', '', '2016-01-19 21:20:36.411554', '2016-01-19 21:20:36.411554')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "awines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (55, 'Honig Rutherford Sauvignon Blanc 2014', 25, 29, 25, 148715, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Rutherford-Sauvignon-Blanc-2014/wine/148715/Detail.aspx', '', '2016-01-19 21:20:36.564613', '2016-01-19 21:20:36.564613')[0m
+  [1m[35m (24.9ms)[0m  DROP TABLE "wines"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "wines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "price_min" integer, "price_max" integer, "price_retail" integer, "api_id" integer NOT NULL, "year" integer, "kind" varchar, "url" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_awines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_awines_on_price_min_and_price_max_and_price_retail' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_awines_on_year_and_url_and_description' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_awines_on_year_and_url_and_description' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_awines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_awines_on_api_id_and_name' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_wines_on_price_min_and_price_max_and_price_retail" ON "wines" ("price_min", "price_max", "price_retail")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_wines_on_year_and_url_and_description" ON "wines" ("year", "url", "description")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_wines_on_api_id_and_name" ON "wines" ("api_id", "name")
+  [1m[36m (0.5ms)[0m  [1mSELECT * FROM "awines"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (12, 'Hello Kitty Angel 2008', 30, 29, 29, 106543, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Angel-2008/wine/106543/Detail.aspx', '', '2016-01-19 04:49:25.635060', '2016-01-19 20:55:31.912146')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (15, 'Angove Family Winemakers Red Belly ', 7, 15, 12, 97675, NULL, 'Wine', 'http://www.wine.com/v6/Angove-Family-Winemakers-Red-Belly-Black-Chardonnay-2006/wine/97675/Detail.aspx', '', '2016-01-19 16:31:39.350597', '2016-01-19 16:33:10.229357')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (16, 'Heliotrope Red Moscato 2012', 9, 9, 9, 138196, NULL, 'Wine', 'http://www.wine.com/v6/Heliotrope-Red-Moscato-2012/wine/138196/Detail.aspx', '', '2016-01-19 16:31:39.450431', '2016-01-19 16:31:39.450431')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (17, 'Hey Mambo Sultry Red 2012', 8, 15, 13, 139543, NULL, 'Wine', 'http://www.wine.com/v6/Hey-Mambo-Sultry-Red-2012/wine/139543/Detail.aspx', '', '2016-01-19 16:31:39.550733', '2016-01-19 16:31:39.550733')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (18, 'Bonny Doon Ca'' del Solo Big House Red 2001', 9, 12, 11, 52588, NULL, 'Wine', 'http://www.wine.com/v6/Bonny-Doon-Ca-del-Solo-Big-House-Red-2001/wine/52588/Detail.aspx', '', '2016-01-19 16:31:39.693142', '2016-01-19 16:31:39.693142')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (19, 'Guelbenzu Red 2007', 7, 14, 13, 98589, NULL, 'Wine', 'http://www.wine.com/v6/Guelbenzu-Red-2007/wine/98589/Detail.aspx', '', '2016-01-19 16:31:39.784097', '2016-01-19 16:31:39.784097')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (20, 'Big House Red Blend 2004', 9, 12, 11, 86585, NULL, 'Wine', 'http://www.wine.com/v6/Big-House-Red-Blend-2004/wine/86585/Detail.aspx', '', '2016-01-19 16:31:39.898447', '2016-01-19 16:31:39.898447')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (21, 'Pillar Box Padthaway Red 2004', 9, 10, 9, 85695, NULL, 'Wineset', 'http://www.wine.com/v6/Pillar-Box-Padthaway-Red-2004/wine/85695/Detail.aspx', '', '2016-01-19 16:31:40.141542', '2016-01-20 21:43:59.475802')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (22, 'Quinta de la Rosa Duoro Red 2005', 8, 8, 20, 97265, NULL, 'Wine', 'http://www.wine.com/v6/Quinta-de-la-Rosa-Duoro-Red-2005/wine/97265/Detail.aspx', '', '2016-01-19 16:31:40.329984', '2016-01-19 16:31:40.329984')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (23, 'Bonny Doon Ca'' del Solo Big House Red 2002', 9, 1305, 11, 60148, NULL, 'Wine', 'http://www.wine.com/v6/Bonny-Doon-Ca-del-Solo-Big-House-Red-2002/wine/60148/Detail.aspx', '', '2016-01-19 16:31:40.446997', '2016-01-19 16:31:40.446997')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (25, 'Kay Brothers Basket Pressed Shiraz 2010', 27, 49, 40, 126340, NULL, 'Wine', 'http://www.wine.com/v6/Kay-Brothers-Basket-Pressed-Shiraz-2010/wine/126340/Detail.aspx', '', '2016-01-19 16:40:06.417632', '2016-01-19 16:40:06.417632')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (26, 'Rockford Shiraz Basket Press 2001', 62, 62, 62, 79465, NULL, 'Wine', 'http://www.wine.com/v6/Rockford-Shiraz-Basket-Press-2001/wine/79465/Detail.aspx', '', '2016-01-19 16:40:06.534127', '2016-01-19 16:40:06.534127')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (27, 'Talomas Basket Press Reserve Syrah 2001', 51, 51, 51, 87548, NULL, 'Wine', 'http://www.wine.com/v6/Talomas-Basket-Press-Reserve-Syrah-2001/wine/87548/Detail.aspx', '', '2016-01-19 16:40:06.632759', '2016-01-19 16:40:06.632759')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (28, 'Highbank Coonawarra Basket Pressed (Cab/Merlot/Cab Franc) 1997', 40, 40, 40, 43138, NULL, 'Wine', 'http://www.wine.com/v6/Highbank-Coonawarra-Basket-Pressed-CabMerlotCab-Franc-1997/wine/43138/Detail.aspx', '', '2016-01-19 16:40:06.732895', '2016-01-19 16:40:06.732895')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (29, 'Saint Cosme Little James Basket Press 2003', 11, 11, 11, 80689, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press-2003/wine/80689/Detail.aspx', '', '2016-01-19 16:40:06.869218', '2016-01-19 16:40:06.869218')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (31, 'Saint Cosme Little James Basket Press', 12, 17, 12, 83132, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press/wine/83132/Detail.aspx', '', '2016-01-19 16:40:07.378402', '2016-01-19 16:40:07.378402')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (32, 'Saint Cosme Little James Basket Press Blanc 2013', 13, 13, 13, 132238, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press-Blanc-2013/wine/132238/Detail.aspx', '', '2016-01-19 16:40:07.490055', '2016-01-19 16:40:07.490055')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (33, 'Saint Cosme Little James Basket Press Blanc 2014', 13, 14, 13, 148110, NULL, 'Wine', 'http://www.wine.com/v6/Saint-Cosme-Little-James-Basket-Press-Blanc-2014/wine/148110/Detail.aspx', '', '2016-01-19 16:40:07.630607', '2016-01-19 16:40:07.630607')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (34, 'Ch. Reynella Basket Pressed Shiraz 2001', 27, 27, 27, 80437, NULL, 'Wine', 'http://www.wine.com/v6/Ch-Reynella-Basket-Pressed-Shiraz-2001/wine/80437/Detail.aspx', '', '2016-01-19 16:40:07.733976', '2016-01-19 16:40:07.733976')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (35, 'Hello Kitty Chardonnay 2010', 15, 15, 15, 118416, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx', '', '2016-01-19 20:59:27.230614', '2016-01-19 20:59:27.230614')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (36, 'Hello Kitty Devil 2006', 39, 39, 39, 106545, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Devil-2006/wine/106545/Detail.aspx', '', '2016-01-19 20:59:27.590411', '2016-01-19 20:59:27.590411')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (37, 'Hello Kitty Sparkling Rose', 23, 36, 23, 106544, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Sparkling-Rose/wine/106544/Detail.aspx', '', '2016-01-19 20:59:27.765306', '2016-01-19 20:59:27.765306')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (38, 'Hello Kitty Sweet Pink Demi Sec (375ML half-bottle)', 12, 16, 19, 106546, NULL, 'Wine', 'http://www.wine.com/v6/Hello-Kitty-Sweet-Pink-Demi-Sec-375ML-half-bottle/wine/106546/Detail.aspx', '', '2016-01-19 20:59:27.928594', '2016-01-19 20:59:27.928594')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (39, 'Merry Edwards Angel Wing Pinot Noir 2006', 129, 129, 129, 150778, NULL, 'Wine', 'http://www.wine.com/v6/Merry-Edwards-Angel-Wing-Pinot-Noir-2006/wine/150778/Detail.aspx', '', '2016-01-19 21:18:34.824904', '2016-01-19 21:18:34.824904')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (40, 'Kanbara Wings of Fortune Sake (720ML)', 35, 39, 35, 92024, NULL, 'Wine', 'http://www.wine.com/v6/Kanbara-Wings-of-Fortune-Sake-720ML/wine/92024/Detail.aspx', '', '2016-01-19 21:18:34.968752', '2016-01-19 21:18:34.968752')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (41, 'Angel''s Wings Sauvignon Blanc 2011', 14, 14, 14, 141834, NULL, 'Wine', 'http://www.wine.com/v6/Angels-Wings-Sauvignon-Blanc-2011/wine/141834/Detail.aspx', '', '2016-01-19 21:18:35.123597', '2016-01-19 21:18:35.123597')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (42, 'H. Blin Millesime Brut 2006', 39, 39, 60, 147210, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Millesime-Brut-2006/wine/147210/Detail.aspx', '', '2016-01-19 21:18:58.579926', '2016-01-19 21:18:58.579926')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (43, 'H. Blin Brut', 47, 47, 47, 148272, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Brut/wine/148272/Detail.aspx', '', '2016-01-19 21:18:58.754396', '2016-01-19 21:18:58.754396')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (44, 'H. Blin Rose', 57, 57, 57, 147707, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Rose/wine/147707/Detail.aspx', '', '2016-01-19 21:18:58.888462', '2016-01-19 21:18:58.888462')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (45, 'H. Blin Blanc de Blancs', 55, 55, 55, 148260, NULL, 'Wine', 'http://www.wine.com/v6/H-Blin-Blanc-de-Blancs/wine/148260/Detail.aspx', '', '2016-01-19 21:18:59.020676', '2016-01-19 21:18:59.020676')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (46, 'Honig Rutherford Sauvignon Blanc 2013', 26, 28, 26, 137314, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Rutherford-Sauvignon-Blanc-2013/wine/137314/Detail.aspx', '', '2016-01-19 21:20:35.266275', '2016-01-19 21:20:35.266275')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (47, 'Honig Cabernet Sauvignon 2011', 38, 44, 45, 123554, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2011/wine/123554/Detail.aspx', '', '2016-01-19 21:20:35.410710', '2016-01-19 21:20:35.410710')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (48, 'Honig Cabernet Sauvignon 2010', 38, 48, 45, 120987, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2010/wine/120987/Detail.aspx', '', '2016-01-19 21:20:35.568825', '2016-01-19 21:20:35.568825')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (49, 'Honig Cabernet Sauvignon 2009', 39, 44, 44, 117430, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2009/wine/117430/Detail.aspx', '', '2016-01-19 21:20:35.725379', '2016-01-19 21:20:35.725379')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (50, 'Honig Cabernet Sauvignon 2007', 35, 35, 40, 108419, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2007/wine/108419/Detail.aspx', '', '2016-01-19 21:20:35.866047', '2016-01-19 21:20:35.866047')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (51, 'Honig Cabernet Sauvignon 1999', 24, 32, 24, 46871, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-1999/wine/46871/Detail.aspx', '', '2016-01-19 21:20:35.997855', '2016-01-19 21:20:35.997855')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (52, 'Honig Bartolucci Vineyard Cabernet Sauvignon 2010', 79, 79, 79, 137317, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Bartolucci-Vineyard-Cabernet-Sauvignon-2010/wine/137317/Detail.aspx', '', '2016-01-19 21:20:36.131360', '2016-01-19 21:20:36.131360')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (53, 'Honig Cabernet Sauvignon 2012', 35, 49, 41, 131659, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Cabernet-Sauvignon-2012/wine/131659/Detail.aspx', '', '2016-01-19 21:20:36.284044', '2016-01-19 21:20:36.284044')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (54, 'Honig Bartolucci Vineyard Cabernet Sauvignon 2012', 79, 79, 79, 151153, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Bartolucci-Vineyard-Cabernet-Sauvignon-2012/wine/151153/Detail.aspx', '', '2016-01-19 21:20:36.411554', '2016-01-19 21:20:36.411554')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "wines" ("id","name","price_min","price_max","price_retail","api_id","year","kind","url","description","created_at","updated_at") VALUES (55, 'Honig Rutherford Sauvignon Blanc 2014', 25, 29, 25, 148715, NULL, 'Wine', 'http://www.wine.com/v6/Honig-Rutherford-Sauvignon-Blanc-2014/wine/148715/Detail.aspx', '', '2016-01-19 21:20:36.564613', '2016-01-19 21:20:36.564613')[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "awines"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160120214805"]]
+  [1m[36m (119.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_api_id_and_name' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_year_and_url_and_description' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_wines_on_price_min_and_price_max_and_price_retail' AND type='index'
+[0m
+
+
+Started GET "/wines/21/" for 127.0.0.1 at 2016-01-20 16:48:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mWine Load (0.3ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered wines/show.html.erb within layouts/application (63.5ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.0ms)
+
+NoMethodError - undefined method `type' for #<Wine:0x007f7749017260>:
+  activemodel (4.2.4) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/views/wines/show.html.erb:15:in `_app_views_wines_show_html_erb___2900455660427673475_70075258499480'
+  actionview (4.2.4) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.4) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.4) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.4) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/273553fe6774df5b/variables" for 127.0.0.1 at 2016-01-20 16:48:44 -0500
+
+
+Started GET "/wines/21/" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mWine Load (1.0ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered wines/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 16:48:58 -0500
+
+
+Started GET "/wines/21/edit" for 127.0.0.1 at 2016-01-20 16:49:00 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered wines/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/wines/21" for 127.0.0.1 at 2016-01-20 16:49:04 -0500
+Processing by WinesController#update as HTML
+  Parameters: {"authenticity_token"=>"nsyrgpN2XNZhMIvbzbA029AVPP/r6mK9ugZrtNZXZpgafw646dUXRF9GDb2VIv+BvAyFpwi3/9AjDMce6opwGw==", "wine"=>{"name"=>"Pillar Box Padthaway Red 2004", "price_min"=>"9", "price_max"=>"10", "price_retail"=>"9", "url"=>"http://www.wine.com/v6/Pillar-Box-Padthaway-Red-2004/wine/85695/Detail.aspx", "kind"=>"Wineset"}, "id"=>"21"}
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 21]]
+Unpermitted parameters: price_retail, url
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mWine Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE ("wines"."name" = 'Pillar Box Padthaway Red 2004' AND "wines"."id" != 21) LIMIT 1[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE ("wines"."api_id" = 85695 AND "wines"."id" != 21) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered wines/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 20.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wines" for 127.0.0.1 at 2016-01-20 16:49:06 -0500
+Processing by WinesController#index as HTML
+  [1m[35mWine Load (0.8ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered wines/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wines/20" for 127.0.0.1 at 2016-01-20 16:49:07 -0500
+Processing by WinesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mWine Load (0.3ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 20]]
+  Rendered wines/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wines/20/edit" for 127.0.0.1 at 2016-01-20 16:49:09 -0500
+Processing by WinesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1  [["id", 20]]
+  Rendered wines/edit.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/wines/20" for 127.0.0.1 at 2016-01-20 16:51:10 -0500
+Processing by WinesController#update as HTML
+  Parameters: {"authenticity_token"=>"MHkiKlMqAhtHw7VbNwkoDf46/HLGmnosnFS4zAk2sR+0yocQKYlJiXm1Mz1vm+NXkiNFKiXH50EFXhRmNeunnA==", "wine"=>{"name"=>"Big House Red Blend 2004", "price_min"=>"9", "price_max"=>"12", "price_retail"=>"11", "url"=>"http://www.wine.com/v6/Big-House-Red-Blend-2004/wine/86585/Detail.aspx", "kind"=>"Wine"}, "id"=>"20"}
+  [1m[36mWine Load (0.1ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."id" = ? LIMIT 1[0m  [["id", 20]]
+Unpermitted parameters: price_retail, url
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE ("wines"."name" = 'Big House Red Blend 2004' AND "wines"."id" != 20) LIMIT 1[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE ("wines"."api_id" = 86585 AND "wines"."id" != 20) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered wines/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 24.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wines" for 127.0.0.1 at 2016-01-20 16:53:25 -0500
+Processing by WinesController#index as HTML
+  [1m[35mWine Load (0.6ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered wines/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-20 17:16:32 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (15.1ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered wines/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 338ms (Views: 282.4ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/wines/search" for 127.0.0.1 at 2016-01-20 17:16:35 -0500
+Processing by WinesController#search as HTML
+  Rendered wines/search.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 17:17:47 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"mN9ULiAMnscILv5OGPoWPoeU7EiNo10ust4/MaVCyXscbPEUWq/VVTZYeChAaN1k641VEG7+wEMr1JObmZ/f+A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[35mWine Load (2.0ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+SQLite3::SQLException: no such column: wines.type: SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1
+Completed 500 Internal Server Error in 5048ms (ActiveRecord: 2.0ms)
+
+SQLite3::SQLException - no such column: wines.type:
+  sqlite3 (1.3.11) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:306:in `block in exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:351:in `select'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.4) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:84:in `find_by'
+  activerecord (4.2.4) lib/active_record/relation.rb:213:in `find_or_create_by'
+  activerecord (4.2.4) lib/active_record/querying.rb:6:in `find_or_create_by'
+  lib/fetch_wines.rb:19:in `block in generate_objects'
+  lib/fetch_wines.rb:18:in `generate_objects'
+  lib/fetch_wines.rb:10:in `initialize'
+  app/controllers/wines_controller.rb:40:in `fetch'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 17:17:52 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"mN9ULiAMnscILv5OGPoWPoeU7EiNo10ust4/MaVCyXscbPEUWq/VVTZYeChAaN1k641VEG7+wEMr1JObmZ/f+A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[36mWine Load (1.7ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1[0m  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+SQLite3::SQLException: no such column: wines.type: SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1
+Completed 500 Internal Server Error in 1795ms (ActiveRecord: 1.7ms)
+
+SQLite3::SQLException - no such column: wines.type:
+  sqlite3 (1.3.11) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:306:in `block in exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:351:in `select'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.4) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:84:in `find_by'
+  activerecord (4.2.4) lib/active_record/relation.rb:213:in `find_or_create_by'
+  activerecord (4.2.4) lib/active_record/querying.rb:6:in `find_or_create_by'
+  lib/fetch_wines.rb:19:in `block in generate_objects'
+  lib/fetch_wines.rb:18:in `generate_objects'
+  lib/fetch_wines.rb:10:in `initialize'
+  app/controllers/wines_controller.rb:40:in `fetch'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/fa2d831b14462bbe/variables" for 127.0.0.1 at 2016-01-20 17:17:54 -0500
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 17:18:29 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"mN9ULiAMnscILv5OGPoWPoeU7EiNo10ust4/MaVCyXscbPEUWq/VVTZYeChAaN1k641VEG7+wEMr1JObmZ/f+A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[35mWine Load (1.3ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+SQLite3::SQLException: no such column: wines.type: SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1
+Completed 500 Internal Server Error in 1879ms (ActiveRecord: 1.3ms)
+
+SQLite3::SQLException - no such column: wines.type:
+  sqlite3 (1.3.11) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:306:in `block in exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:351:in `select'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.4) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:84:in `find_by'
+  activerecord (4.2.4) lib/active_record/relation.rb:213:in `find_or_create_by'
+  activerecord (4.2.4) lib/active_record/querying.rb:6:in `find_or_create_by'
+  lib/fetch_wines.rb:19:in `block in generate_objects'
+  lib/fetch_wines.rb:18:in `generate_objects'
+  lib/fetch_wines.rb:10:in `initialize'
+  app/controllers/wines_controller.rb:40:in `fetch'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/1f9ce3a62f7a7e50/variables" for 127.0.0.1 at 2016-01-20 17:18:31 -0500
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 17:18:33 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"mN9ULiAMnscILv5OGPoWPoeU7EiNo10ust4/MaVCyXscbPEUWq/VVTZYeChAaN1k641VEG7+wEMr1JObmZ/f+A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[36mWine Load (1.8ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1[0m  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+SQLite3::SQLException: no such column: wines.type: SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 1.8ms)
+
+SQLite3::SQLException - no such column: wines.type:
+  sqlite3 (1.3.11) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:306:in `block in exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:351:in `select'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.4) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:84:in `find_by'
+  activerecord (4.2.4) lib/active_record/relation.rb:213:in `find_or_create_by'
+  activerecord (4.2.4) lib/active_record/querying.rb:6:in `find_or_create_by'
+  lib/fetch_wines.rb:19:in `block in generate_objects'
+  lib/fetch_wines.rb:18:in `generate_objects'
+  lib/fetch_wines.rb:10:in `initialize'
+  app/controllers/wines_controller.rb:40:in `fetch'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/405813d7fa9275bc/variables" for 127.0.0.1 at 2016-01-20 17:18:33 -0500
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 17:18:57 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"mN9ULiAMnscILv5OGPoWPoeU7EiNo10ust4/MaVCyXscbPEUWq/VVTZYeChAaN1k641VEG7+wEMr1JObmZ/f+A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[35mWine Load (1.6ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+SQLite3::SQLException: no such column: wines.type: SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? AND "wines"."type" = 'Wine' LIMIT 1
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 1.6ms)
+
+SQLite3::SQLException - no such column: wines.type:
+  sqlite3 (1.3.11) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:306:in `block in exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:473:in `block in log'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract_adapter.rb:467:in `log'
+  activerecord (4.2.4) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:351:in `select'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.4) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.4) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.4) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.4) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:475:in `find_take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:105:in `take'
+  activerecord (4.2.4) lib/active_record/relation/finder_methods.rb:84:in `find_by'
+  activerecord (4.2.4) lib/active_record/relation.rb:213:in `find_or_create_by'
+  activerecord (4.2.4) lib/active_record/querying.rb:6:in `find_or_create_by'
+  lib/fetch_wines.rb:19:in `block in generate_objects'
+  lib/fetch_wines.rb:18:in `generate_objects'
+  lib/fetch_wines.rb:10:in `initialize'
+  app/controllers/wines_controller.rb:40:in `fetch'
+  actionpack (4.2.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.4) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.4) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/scott/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/66e2e4ae6de2934b/variables" for 127.0.0.1 at 2016-01-20 17:18:57 -0500
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 17:19:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"mN9ULiAMnscILv5OGPoWPoeU7EiNo10ust4/MaVCyXscbPEUWq/VVTZYeChAaN1k641VEG7+wEMr1JObmZ/f+A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[35mWine Load (0.6ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+  [1m[36mWine Load (0.3ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1[0m  [["name", "Hello Kitty Sparkling Rose"], ["url", "http://www.wine.com/v6/Hello-Kitty-Sparkling-Rose/wine/106544/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 36], ["price_min", 23], ["price_retail", 23], ["api_id", 106544]]
+  [1m[35mWine Load (0.1ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Devil 2007"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2007/wine/115160/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 115160]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Hello Kitty Devil 2007' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 115160 LIMIT 1[0m
+  [1m[35mSQL (36.0ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Hello Kitty Devil 2007"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2007/wine/115160/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 115160], ["created_at", "2016-01-20 22:19:20.374030"], ["updated_at", "2016-01-20 22:19:20.374030"]]
+  [1m[36m (137.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.3ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Devil 2006"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2006/wine/106545/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 106545]]
+  [1m[36mWine Load (0.3ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1[0m  [["name", "Hello Kitty Angel 2008"], ["url", "http://www.wine.com/v6/Hello-Kitty-Angel-2008/wine/106543/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 29], ["price_min", 29], ["price_retail", 29], ["api_id", 106543]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mWine Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Hello Kitty Angel 2008' LIMIT 1[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 106543 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mWine Load (0.1ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty California Red Wine 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-California-Red-Wine-2010/wine/118428/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 10], ["price_min", 10], ["price_retail", 15], ["api_id", 118428]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Hello Kitty California Red Wine 2010' LIMIT 1
+  [1m[36mWine Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 118428 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Hello Kitty California Red Wine 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-California-Red-Wine-2010/wine/118428/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 10], ["price_min", 10], ["price_retail", 15], ["api_id", 118428], ["created_at", "2016-01-20 22:19:21.188633"], ["updated_at", "2016-01-20 22:19:21.188633"]]
+  [1m[36m (134.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.3ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Sweet Pink Demi Sec (375ML half-bottle)"], ["url", "http://www.wine.com/v6/Hello-Kitty-Sweet-Pink-Demi-Sec-375ML-half-bottle/wine/106546/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 16], ["price_min", 12], ["price_retail", 19], ["api_id", 106546]]
+  Rendered wines/results.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 4518ms (Views: 887.9ms | ActiveRecord: 313.8ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 17:19:22 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 17:19:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 17:19:22 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 17:19:22 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 17:19:22 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 17:19:22 -0500
+
+
+Started GET "/wines" for 127.0.0.1 at 2016-01-20 18:06:57 -0500
+Processing by WinesController#index as HTML
+  [1m[36mWine Load (20.0ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered wines/index.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 396ms (Views: 346.1ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/wines/search" for 127.0.0.1 at 2016-01-20 18:07:00 -0500
+Processing by WinesController#search as HTML
+  Rendered wines/search.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 18:07:04 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"RbcGuE5o/YUx+MhCIk1WXYsJMpn9HIgsVB+YCa+60F7BBKOCNMu2Fw+OTiR6350H5xCLwR5BFUHNFTSjk2fG3Q==", "wine"=>{"name"=>"hello yellow", "price_min"=>"", "price_max"=>""}}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Dom Perignon Andy Warhol Yellow Label 2002"], ["url", "http://www.wine.com/v6/Dom-Perignon-Andy-Warhol-Yellow-Label-2002/wine/107629/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 159], ["price_min", 149], ["price_retail", 159], ["api_id", 107629]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Dom Perignon Andy Warhol Yellow Label 2002' LIMIT 1
+  [1m[36mWine Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 107629 LIMIT 1[0m
+  [1m[35mSQL (34.3ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Dom Perignon Andy Warhol Yellow Label 2002"], ["url", "http://www.wine.com/v6/Dom-Perignon-Andy-Warhol-Yellow-Label-2002/wine/107629/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 159], ["price_min", 149], ["price_retail", 159], ["api_id", 107629], ["created_at", "2016-01-20 23:07:05.343850"], ["updated_at", "2016-01-20 23:07:05.343850"]]
+  [1m[36m (237.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Yellow Tail The Reserve Shiraz 2006"], ["url", "http://www.wine.com/v6/Yellow-Tail-The-Reserve-Shiraz-2006/wine/92653/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 15], ["price_min", 10], ["price_retail", 10], ["api_id", 92653]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Yellow Tail The Reserve Shiraz 2006' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 92653 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Yellow Tail The Reserve Shiraz 2006"], ["url", "http://www.wine.com/v6/Yellow-Tail-The-Reserve-Shiraz-2006/wine/92653/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 15], ["price_min", 10], ["price_retail", 10], ["api_id", 92653], ["created_at", "2016-01-20 23:07:05.623358"], ["updated_at", "2016-01-20 23:07:05.623358"]]
+  [1m[36m (147.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.1ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label/wine/528/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 56], ["price_min", 35], ["price_retail", 54], ["api_id", 528]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 528 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label/wine/528/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 56], ["price_min", 35], ["price_retail", 54], ["api_id", 528], ["created_at", "2016-01-20 23:07:05.777552"], ["updated_at", "2016-01-20 23:07:05.777552"]]
+  [1m[36m (159.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label (1.5 Liter Magnum)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-15-Liter-Magnum/wine/15511/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 11399], ["price_min", 78], ["price_retail", 129], ["api_id", 15511]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label (1.5 Liter Magnum)' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 15511 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label (1.5 Liter Magnum)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-15-Liter-Magnum/wine/15511/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 11399], ["price_min", 78], ["price_retail", 129], ["api_id", 15511], ["created_at", "2016-01-20 23:07:05.948803"], ["updated_at", "2016-01-20 23:07:05.948803"]]
+  [1m[36m (274.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.5ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label (3 Liter)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-3-Liter/wine/133812/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 489], ["price_min", 489], ["price_retail", 489], ["api_id", 133812]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.5ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label (3 Liter)' LIMIT 1
+  [1m[36mWine Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 133812 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label (3 Liter)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-3-Liter/wine/133812/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 489], ["price_min", 489], ["price_retail", 489], ["api_id", 133812], ["created_at", "2016-01-20 23:07:06.235116"], ["updated_at", "2016-01-20 23:07:06.235116"]]
+  [1m[36m (235.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label with Gift Box"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-with-Gift-Box/wine/54586/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 65], ["price_min", 39], ["price_retail", 65], ["api_id", 54586]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label with Gift Box' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 54586 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label with Gift Box"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-with-Gift-Box/wine/54586/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 65], ["price_min", 39], ["price_retail", 65], ["api_id", 54586], ["created_at", "2016-01-20 23:07:06.479812"], ["updated_at", "2016-01-20 23:07:06.479812"]]
+  [1m[36m (236.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label (375ML half-bottle)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-375ML-half-bottle/wine/15512/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 52], ["price_min", 19], ["price_retail", 35], ["api_id", 15512]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label (375ML half-bottle)' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 15512 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label (375ML half-bottle)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-375ML-half-bottle/wine/15512/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 52], ["price_min", 19], ["price_retail", 35], ["api_id", 15512], ["created_at", "2016-01-20 23:07:06.724119"], ["updated_at", "2016-01-20 23:07:06.724119"]]
+  [1m[36m (124.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Naturally Clicquot Brut Yellow Label"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Naturally-Clicquot-Brut-Yellow-Label/wine/125752/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 53], ["price_min", 53], ["price_retail", 58], ["api_id", 125752]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Naturally Clicquot Brut Yellow Label' LIMIT 1
+  [1m[36mWine Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 125752 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Naturally Clicquot Brut Yellow Label"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Naturally-Clicquot-Brut-Yellow-Label/wine/125752/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 53], ["price_min", 53], ["price_retail", 58], ["api_id", 125752], ["created_at", "2016-01-20 23:07:06.855813"], ["updated_at", "2016-01-20 23:07:06.855813"]]
+  [1m[36m (173.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label with Functional Box"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-with-Functional-Box/wine/27109/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 48], ["price_min", 37], ["price_retail", 37], ["api_id", 27109]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label with Functional Box' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 27109 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label with Functional Box"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-with-Functional-Box/wine/27109/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 48], ["price_min", 37], ["price_retail", 37], ["api_id", 27109], ["created_at", "2016-01-20 23:07:07.036830"], ["updated_at", "2016-01-20 23:07:07.036830"]]
+  [1m[36m (236.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Veuve Clicquot Brut Yellow Label (Sold as case of 12)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-Sold-as-case-of-12/wine/136899/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 49], ["price_min", 49], ["price_retail", 49], ["api_id", 136899]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.3ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Veuve Clicquot Brut Yellow Label (Sold as case of 12)' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 136899 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "wines" ("name", "url", "kind", "description", "price_max", "price_min", "price_retail", "api_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Veuve Clicquot Brut Yellow Label (Sold as case of 12)"], ["url", "http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label-Sold-as-case-of-12/wine/136899/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 49], ["price_min", 49], ["price_retail", 49], ["api_id", 136899], ["created_at", "2016-01-20 23:07:07.280877"], ["updated_at", "2016-01-20 23:07:07.280877"]]
+  [1m[36m (272.7ms)[0m  [1mcommit transaction[0m
+  Rendered wines/results.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3421ms (Views: 48.3ms | ActiveRecord: 2144.0ms)
+
+
+Started GET "/wines/search" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+Processing by WinesController#search as HTML
+  Rendered wines/search.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+
+
+Started GET "/assets/application.self-1a9768a77d2500d1aa98bc649486e6af86c3823f069cc4228f255bd4bbe45cbf.css?body=1" for 127.0.0.1 at 2016-01-20 18:08:33 -0500
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 18:08:35 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"Eo6a9ZKr7V38+c1AwgTgU0mRlBmXZo1ZI882P7xABWuWPT/P6Aimz8KPSyaalisJJYgtQXQ7EDS6xZqVgJ0T6A==", "wine"=>{"name"=>"hello", "price_min"=>"", "price_max"=>""}}
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Chardonnay 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-Chardonnay-2010/wine/118416/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 15], ["price_min", 15], ["price_retail", 15], ["api_id", 118416]]
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1[0m  [["name", "Hello Kitty Sparkling Rose"], ["url", "http://www.wine.com/v6/Hello-Kitty-Sparkling-Rose/wine/106544/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 36], ["price_min", 23], ["price_retail", 23], ["api_id", 106544]]
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Devil 2006"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2006/wine/106545/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 106545]]
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1[0m  [["name", "Hello Kitty Devil 2007"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2007/wine/115160/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 115160]]
+  [1m[35mWine Load (0.1ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Angel 2008"], ["url", "http://www.wine.com/v6/Hello-Kitty-Angel-2008/wine/106543/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 29], ["price_min", 29], ["price_retail", 29], ["api_id", 106543]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mWine Exists (0.2ms)[0m  SELECT  1 AS one FROM "wines" WHERE "wines"."name" = 'Hello Kitty Angel 2008' LIMIT 1
+  [1m[36mWine Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "wines" WHERE "wines"."api_id" = 106543 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mWine Load (0.2ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1[0m  [["name", "Hello Kitty California Red Wine 2010"], ["url", "http://www.wine.com/v6/Hello-Kitty-California-Red-Wine-2010/wine/118428/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 10], ["price_min", 10], ["price_retail", 15], ["api_id", 118428]]
+  [1m[35mWine Load (0.2ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Sweet Pink Demi Sec (375ML half-bottle)"], ["url", "http://www.wine.com/v6/Hello-Kitty-Sweet-Pink-Demi-Sec-375ML-half-bottle/wine/106546/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 16], ["price_min", 12], ["price_retail", 19], ["api_id", 106546]]
+  Rendered wines/results.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 857ms (Views: 19.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/wines/results" for 127.0.0.1 at 2016-01-20 18:08:41 -0500
+Processing by WinesController#fetch as HTML
+  Parameters: {"authenticity_token"=>"Eo6a9ZKr7V38+c1AwgTgU0mRlBmXZo1ZI882P7xABWuWPT/P6Aimz8KPSyaalisJJYgtQXQ7EDS6xZqVgJ0T6A==", "wine"=>{"name"=>"hello devil", "price_min"=>"", "price_max"=>""}}
+  [1m[36mWine Load (0.4ms)[0m  [1mSELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1[0m  [["name", "Hello Kitty Devil 2006"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2006/wine/106545/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 106545]]
+  [1m[35mWine Load (0.3ms)[0m  SELECT  "wines".* FROM "wines" WHERE "wines"."name" = ? AND "wines"."url" = ? AND "wines"."kind" = ? AND "wines"."description" = ? AND "wines"."price_max" = ? AND "wines"."price_min" = ? AND "wines"."price_retail" = ? AND "wines"."api_id" = ? LIMIT 1  [["name", "Hello Kitty Devil 2007"], ["url", "http://www.wine.com/v6/Hello-Kitty-Devil-2007/wine/115160/Detail.aspx"], ["kind", "Wine"], ["description", ""], ["price_max", 39], ["price_min", 39], ["price_retail", 39], ["api_id", 115160]]
+  Rendered wines/results.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 487ms (Views: 23.7ms | ActiveRecord: 0.6ms)

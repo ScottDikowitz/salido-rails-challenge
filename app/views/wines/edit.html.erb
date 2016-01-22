@@ -21,8 +21,8 @@ Retail Price
 URL
 <input type="text" name="wine[url]" value="<%= @wine.url %>">
 </br>
-<select>
-  <option value='wine1'>wine1</option>
+Type <select name="wine[kind]">
+  <%= options_for_select([['Wine', 'Wine'], ['Wineset', 'Wineset'], ['Champagne', 'Champagne'], ['Prosecco', 'Prosecco']], 1) %>
 </select>
 <input type="submit" value="Update!">
 </form>

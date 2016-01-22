@@ -1,18 +1,18 @@
 <a href="http://www.wine.com/" title="Wine.com the destination for Wine and Wine Gifts">
   <img src="http://cache.wine.com/images/logos/80x80_winecom_logo.png" alt="Wine.com the destination for Wine and Wine Gifts" /></a>
   <br/>
-<%= @wine.name %>
+Name: <%= @wine.name %>
 </br>
-<%= @wine.price_min %>
-</br>
-
-<%= @wine.price_max %>
+Min price: <%= @wine.price_min %>
 </br>
 
-<%= @wine.price_retail %>
+Max price: <%= @wine.price_max %>
 </br>
 
-<%= @wine.type %>
+Retail price: <%= @wine.price_retail %>
+</br>
+
+Type: <%= @wine.kind %>
 </br>
 
 <a href='<%= @wine.url %>'>Link</a>
